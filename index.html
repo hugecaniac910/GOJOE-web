@@ -128,16 +128,6 @@
       align-items: center;
       justify-content: space-between;
     }
-    .nav-logo {
-      font-family: var(--font-head);
-      font-weight: 900;
-      font-size: 28px;
-      letter-spacing: 0.06em;
-      color: var(--orange);
-      text-transform: uppercase;
-      text-shadow: 2px 2px 0 var(--dark);
-      -webkit-text-stroke: 1px #1A1A1A;
-    }
     .nav-links {
       display: flex;
       align-items: center;
@@ -199,6 +189,14 @@
       position: relative;
       z-index: 2;
       max-width: 680px;
+    }
+    .hero-logo {
+      margin-bottom: 24px;
+    }
+    .hero-logo img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
     .hero-eyebrow {
       font-family: var(--font-head);
@@ -406,6 +404,14 @@
     .ingredient-icon {
       font-size: 32px;
       margin-bottom: 16px;
+      line-height: 1;
+    }
+    .ingredient-icon img {
+      width: 64px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
     }
     .ingredient-name {
       font-family: var(--font-head);
@@ -465,14 +471,50 @@
     }
     .why-card:hover::before { transform: scaleX(1); }
     .why-icon {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 24px;
-      border: 2px solid var(--orange);
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 28px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 26px;
+    }
+    .why-icon--large {
+      width: 200px;
+      height: 200px;
+    }
+    .why-icon img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .why-icon--large img {
+      border: 2px solid var(--orange);
+      padding: 10px;
+      box-sizing: border-box;
+      border-radius: 6px;
+    }
+    .why-icon--wide {
+      width: 100%;
+      height: auto;
+      margin: 0 0 16px;
+      display: block;
+      border: 2px solid var(--orange);
+      padding: 10px;
+      box-sizing: border-box;
+      border-radius: 6px;
+    }
+    .why-icon--wide-half {
+      max-width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .why-icon--wide img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
     }
     .why-title {
       font-family: var(--font-head);
@@ -821,7 +863,6 @@
   ============================================================ -->
   <nav id="nav">
     <div class="container">
-      <div class="nav-logo">GoJoe</div>
       <ul class="nav-links">
         <li><a href="#what">What Is It</a></li>
         <li><a href="#science">The Science</a></li>
@@ -841,7 +882,10 @@
     <div class="hero-bg"></div>
     <div class="container">
       <div class="hero-content">
-        <div class="hero-eyebrow">MRE — Military Rated Refreshment</div>
+        <div class="hero-logo">
+          <img src="images/gojoe-logo.svg" alt="GoJoe" />
+        </div>
+        <div class="hero-eyebrow">MRE - Military Rated Enhancement</div>
         <h1 class="hero-headline">
           <span class="line1">Fuel That</span><br>
           <span class="line2">Follows</span><br>
@@ -941,7 +985,9 @@
 
       <div class="ingredients-grid">
         <div class="ingredient-card reveal">
-          <div class="ingredient-icon">⚡</div>
+          <div class="ingredient-icon">
+            <img src="images/l-theanine.png" alt="Calm focus — the L-Theanine edge" width="64" height="40" />
+          </div>
           <div class="ingredient-name">L-Theanine</div>
           <div class="ingredient-role">Smooth Operator</div>
           <p class="ingredient-desc">
@@ -951,7 +997,9 @@
           </p>
         </div>
         <div class="ingredient-card reveal reveal-delay-1">
-          <div class="ingredient-icon">🧠</div>
+          <div class="ingredient-icon">
+            <img src="images/alpha-gpc.png" alt="Brain illustration representing cognitive support from Alpha GPC" width="64" height="40" />
+          </div>
           <div class="ingredient-name">Alpha GPC</div>
           <div class="ingredient-role">Cognitive Fuel</div>
           <p class="ingredient-desc">
@@ -961,7 +1009,9 @@
           </p>
         </div>
         <div class="ingredient-card reveal reveal-delay-2">
-          <div class="ingredient-icon">🦁</div>
+          <div class="ingredient-icon">
+            <img src="images/lions_mane.png" alt="Lion's Mane mushroom" width="64" height="40" />
+          </div>
           <div class="ingredient-name">Lion's Mane</div>
           <div class="ingredient-role">Neural Support</div>
           <p class="ingredient-desc">
@@ -986,7 +1036,9 @@
       </div>
       <div class="why-grid">
         <div class="why-card reveal">
-          <div class="why-icon">🎒</div>
+          <div class="why-icon why-icon--wide why-icon--wide-half">
+            <img src="images/zero-equipment.png" alt="Zero equipment – ruck ready, no machine" />
+          </div>
           <div class="why-title">Zero Equipment</div>
           <p class="why-desc">
             Fits in your kit, your ruck, your patrol car.
@@ -995,7 +1047,9 @@
           </p>
         </div>
         <div class="why-card reveal reveal-delay-1">
-          <div class="why-icon">📉</div>
+          <div class="why-icon why-icon--wide">
+            <img src="images/no-crash.png" alt="L-Theanine smooth operator — no crash waveform" />
+          </div>
           <div class="why-title">No Crash</div>
           <p class="why-desc">
             The L-Theanine and Alpha GPC stack is specifically dosed to prevent
@@ -1003,7 +1057,9 @@
           </p>
         </div>
         <div class="why-card reveal reveal-delay-2">
-          <div class="why-icon">🔬</div>
+          <div class="why-icon why-icon--large">
+            <img src="images/nootropic-stack.png" alt="Nootropic stack illustration with brain, lion and mushrooms" />
+          </div>
           <div class="why-title">Nootropic Stack</div>
           <p class="why-desc">
             Not energy. <em>Intelligence</em>. The three-compound formula
@@ -1027,7 +1083,7 @@
         <div class="field-photo field-photo-1 reveal">
           <!-- ↓ REPLACE src with desert-operator photo (img 2) -->
           <img src="images/operator-desert.png" alt="Tactical operator brewing GoJoe on a camp stove in the field" onerror="this.style.display='none'" />
-          <div class="field-label">Forward Operating Base</div>
+          <div class="field-label">Ready Room Companion</div>
         </div>
         <div class="field-photo field-photo-2 reveal reveal-delay-1">
           <!-- ↓ REPLACE src with mountain-hunter photo (img 5) -->
@@ -1037,11 +1093,9 @@
       </div>
 
       <div class="testimonial-block reveal">
-        <div class="testimonial-mark">"</div>
         <p class="testimonial-quote">
-          I've been on 72-hour exercises where coffee wasn't an option —
-          no time, no kit. GoJoe changed that calculus completely.
-          One sachet in my canteen. Mission continues.
+          "I've been on 72-hour exercises where coffee wasn't an option - no time, no kit.
+          GoJoe changed that completely. One pouch in my canteen and the mission continues."
         </p>
         <div class="testimonial-attr">
           Staff Sergeant, U.S. Army <span>— Beta Tester</span>
@@ -1167,7 +1221,7 @@
       </div>
       <div class="footer-bottom">
         <p class="footer-copy">© 2026 GoJoe. All rights reserved.</p>
-        <div class="footer-mre">MRE — Military Rated Refreshment</div>
+        <div class="footer-mre">MRE - Military Rated Enhancement</div>
       </div>
     </div>
   </footer>
