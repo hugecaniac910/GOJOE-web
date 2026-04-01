@@ -220,12 +220,13 @@
     .hero-headline {
       font-family: var(--font-head);
       font-weight: 900;
-      font-size: clamp(52px, 8vw, 88px);
-      line-height: 0.95;
+      font-size: clamp(30px, 4.6vw, 56px);
+      line-height: 1;
       text-transform: uppercase;
       letter-spacing: 0.01em;
       margin-bottom: 24px;
     }
+    .hero-headline .line1 { display: block; }
     .hero-headline .line2 { color: var(--orange); }
     .hero-sub {
       font-size: 18px;
@@ -378,13 +379,21 @@
     }
     .science-hero-img {
       /* ↓ REPLACE with ingredient-callout image (img 3) */
-      background: url('images/ingredients-callout.png') center / contain no-repeat;
+      background: url('images/ingredients-callout.png') center / cover no-repeat;
       background-color: #181C22;
       width: 100%;
       max-width: 700px;
       aspect-ratio: 1 / 1;
       margin: 0 auto 72px;
       border: 1px solid rgba(224,123,26,0.15);
+      overflow: hidden;
+    }
+    .science-hero-img img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
     .ingredients-grid {
       display: grid;
@@ -885,11 +894,9 @@
         <div class="hero-logo">
           <img src="images/gojoe-logo.svg" alt="GoJoe" />
         </div>
-        <div class="hero-eyebrow">MRE - Military Rated Enhancement</div>
+        <div class="hero-eyebrow">MRE - Military Ration Enhancement</div>
         <h1 class="hero-headline">
-          <span class="line1">Fuel That</span><br>
-          <span class="line2">Follows</span><br>
-          <span class="line1">Orders.</span>
+          <span class="line1">Optimize <span class="line2">your</span> brew</span>
         </h1>
         <p class="hero-sub">
           Enhanced coffee engineered for <strong>high-stakes environments</strong>.
@@ -980,7 +987,7 @@
 
       <!-- ↓ REPLACE src with your ingredient-callout image (img 3) -->
       <div class="science-hero-img reveal">
-        <img src="images/ingredients-callout.png" alt="GoJoe camo sachet with ingredient overlays — Alpha GPC, L-Theanine, Lion's Mane" style="width:100%;height:100%;object-fit:contain;" onerror="this.style.display='none'" />
+        <img src="images/ingredients-callout.png" alt="GoJoe camo sachet with ingredient overlays — Alpha GPC, L-Theanine, Lion's Mane" onerror="this.style.display='none'" />
       </div>
 
       <div class="ingredients-grid">
@@ -1083,12 +1090,12 @@
         <div class="field-photo field-photo-1 reveal">
           <!-- ↓ REPLACE src with desert-operator photo (img 2) -->
           <img src="images/operator-desert.png" alt="Tactical operator brewing GoJoe on a camp stove in the field" onerror="this.style.display='none'" />
-          <div class="field-label">Ready Room Companion</div>
+          <div class="field-label">On the go</div>
         </div>
         <div class="field-photo field-photo-2 reveal reveal-delay-1">
           <!-- ↓ REPLACE src with mountain-hunter photo (img 5) -->
           <img src="images/hunter-mountain.png" alt="Hunter drinking GoJoe at a snow-covered mountain campsite" onerror="this.style.display='none'" />
-          <div class="field-label">High Country Op</div>
+          <div class="field-label">In the field</div>
         </div>
       </div>
 
@@ -1148,7 +1155,7 @@
               <td><span class="partial">Some</span></td>
             </tr>
             <tr>
-              <td>Actual Coffee Taste</td>
+              <td>Premium Coffee Taste</td>
               <td class="highlight"><span class="check">✓</span></td>
               <td><span class="check">✓</span></td>
               <td><span class="cross">✗</span></td>
@@ -1221,7 +1228,7 @@
       </div>
       <div class="footer-bottom">
         <p class="footer-copy">© 2026 GoJoe. All rights reserved.</p>
-        <div class="footer-mre">MRE - Military Rated Enhancement</div>
+        <div class="footer-mre">MRE - Military Ration Enhancement</div>
       </div>
     </div>
   </footer>
